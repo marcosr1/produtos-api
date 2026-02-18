@@ -12,7 +12,6 @@ Projeto desenvolvido em **Node.js**, usando **PostgreSQL**, **Sequelize**.
 - ✅ Atualizar campos individualmente (PATCH)
 - ✅ Ativar / desativar produto
 - ✅ Upload de múltiplas imagens
-- ✅ Armazenamento de imagens no Amazon S3
 - ✅ URLs das imagens salvas no banco de dados
 - ✅ Estrutura organizada e escalável
 
@@ -24,8 +23,6 @@ Projeto desenvolvido em **Node.js**, usando **PostgreSQL**, **Sequelize**.
 - Express
 - PostgreSQL
 - Sequelize
-- AWS SDK (S3)
-- Multer / Multer-S3
 - dotenv
 - UUID
 
@@ -71,7 +68,21 @@ Criar produto
 ```bash
 POST /products/
 ```
+## Listar Produtos
+```bash
+GET /products/
+```
+## Atualizar nome
+```bash
+PATCH /products/:id/name
+```
+## Atualizar preço
+```bash
+PATCH /products/:id/price
+```
+## Atualizar ativo
+```bash
+PATCH /products/:id/active
+```
 
-
-
-
+---
