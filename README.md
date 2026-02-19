@@ -78,7 +78,7 @@ POST /products/
 ```
 ### preview pedido
 ```bash
-POST /produtos/previewProdutos
+POST /produtos/previewPedido
 ```
 ### Listar Produtos
 ```bash
