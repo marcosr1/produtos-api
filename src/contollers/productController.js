@@ -53,7 +53,19 @@ export const updateImage = async (req, res) => {
 
     if (!imagem) return res.status(400).json( { error: "Imagem é obrigatoria" } );
 
-    await Produtos.update( { imagem }, { where: { id } } )
+    await Produtos.update( { imagem }, { where: { id } } );
+
+    const produto = await Produtos.findByPk(id);
+    res.json(produto);
+};
+
+export const updateAtivo = async (req, res) => {
+    const { id } = req.params;
+    const { ativo } = req.body;
+
+    if (!ativo) return res.status(400).json( { error: "Ativo é obrigatório" } );
+
+    await Produtos.update( { ativo }, { where: { id } } );
 
     const produto = await Produtos.findByPk(id);
     res.json(produto);
