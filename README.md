@@ -76,24 +76,24 @@ npm run dev
 ```bash
 POST /products/
 ```
-## Listar Produtos
+### Listar Produtos
 ```bash
 GET /products/
 ```
-## Atualizar nome
+### Atualizar nome
 ```bash
 PATCH /products/:id/name
 ```
-## Atualizar preço
+### Atualizar preço
 ```bash
 PATCH /products/:id/price
 ```
-## Atualizar ativo
+### Atualizar ativo
 ```bash
 PATCH /products/:id/active
 ```
 
-## Criar order
+### Criar order
 ```bash
 POST /order/
 ```
