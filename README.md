@@ -76,6 +76,10 @@ npm run dev
 ```bash
 POST /products/
 ```
+### preview pedido
+```bash
+POST /produtos/previewProdutos
+```
 ### Listar Produtos
 ```bash
 GET /products/
