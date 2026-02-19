@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { createProduct, getProducts, updateProduct, deleteProduct, updateName, updatePreco, updateImage, updateAtivo } from "../contollers/productController.js";
+import { createProduct, getProducts, updateProduct, deleteProduct, updateName, updatePreco, updateImage, updateAtivo, previewPedido } from "../contollers/productController.js";
 
 const router = Router();
 
 router.post("/", createProduct);
+router.post("/previewPedido", previewPedido);
 
 router.get("/", getProducts);
 

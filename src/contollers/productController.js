@@ -1,4 +1,5 @@
-import Produtos from "../models/Product.js";
+import { Produtos } from "../models/index.js";
+import produtosService from "../service/productService.js";
 
 export const createProduct = async (req, res) => {
     try {
@@ -76,4 +77,14 @@ export const deleteProduct = async (req, res) => {
 
     await Produtos.destroy( { where: { id } } );
     res.json( { message: "Produto removido com sucesso!" } );
+};
+
+export const previewPedido = async (req, res) => {
+    try {
+    const resultado = await produtosService.calcularPedido(req.body);
+
+    res.json(resultado);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 };
