@@ -37,10 +37,18 @@ src/
 │ ├── database.js
 ├── controllers/
 │ └── productController.js
+│ └── orderController.js
 ├── models/
+│ └── Index.js
 │ └── Product.js
+│ └── Order.js
+│ └── OrderItem.js
 └── routes/
-└── productRoutes.js
+│ └── productRoutes.js
+│ └── orderRoutes.js
+└── service/
+│ └── productService.js
+│ └── orderService.js
 ```
 
 ## ⚙️ Configure as variáveis de ambiente
@@ -64,7 +72,7 @@ npm run dev
 
 ## 🔗 Endpoints
 
-Criar produto
+## Criar produto
 ```bash
 POST /products/
 ```
@@ -83,6 +91,11 @@ PATCH /products/:id/price
 ## Atualizar ativo
 ```bash
 PATCH /products/:id/active
+```
+
+## Criar order
+```bash
+POST /order/
 ```
 
 ---
