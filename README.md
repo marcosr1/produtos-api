@@ -1,0 +1,88 @@
+# 📦 Produtos API
+
+API REST para gerenciamento de produtos.  
+Projeto desenvolvido em **Node.js**, usando **PostgreSQL**, **Sequelize**.
+
+---
+
+## 🚀 Funcionalidades
+
+- ✅ Criar produtos
+- ✅ Listar produtos
+- ✅ Atualizar campos individualmente (PATCH)
+- ✅ Ativar / desativar produto
+- ✅ Upload de múltiplas imagens
+- ✅ URLs das imagens salvas no banco de dados
+- ✅ Estrutura organizada e escalável
+
+---
+
+## 🧱 Tecnologias
+
+- Node.js
+- Express
+- PostgreSQL
+- Sequelize
+- dotenv
+- UUID
+
+---
+
+## 📁 Estrutura do projeto
+```
+src/
+├── app.js
+├── server.js
+├── config/
+│ ├── database.js
+├── controllers/
+│ └── productController.js
+├── models/
+│ └── Product.js
+└── routes/
+└── productRoutes.js
+```
+
+## ⚙️ Configure as variáveis de ambiente
+
+Crie um arquivo .env na raiz do projeto:
+```
+PORT=3000
+
+DB_NAME=produtosdb
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+## ▶️ Executando o projeto
+
+```bash
+npm run dev
+```
+
+## 🔗 Endpoints
+
+Criar produto
+```bash
+POST /products/
+```
+## Listar Produtos
+```bash
+GET /products/
+```
+## Atualizar nome
+```bash
+PATCH /products/:id/name
+```
+## Atualizar preço
+```bash
+PATCH /products/:id/price
+```
+## Atualizar ativo
+```bash
+PATCH /products/:id/active
+```
+
+---
