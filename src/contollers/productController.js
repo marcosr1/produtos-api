@@ -72,6 +72,18 @@ export const updateAtivo = async (req, res) => {
     res.json(produto);
 };
 
+export const updateTipo = async (req, res) => {
+    const { id } = req.params;
+    const { tipo } = req.body;
+
+    if (!tipo) return res.status(400).json( { error: "Tipo é obrigatório" } );
+
+    await Produtos.update( { tipo }, { where: { id } } );
+
+    const produto = await Produtos.findByPk(id);
+    res.json(produto);  
+};
+
 export const deleteProduct = async (req, res) => {
     const { id } = req.params;
 

@@ -15,9 +15,14 @@ export const Produtos = sequelize.define("produtos", {
         type: DataTypes.FLOAT,
         allowNull: false
     },
+    tipo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "GENERIC"
+    },
     imagem: {
         type: DataTypes.ARRAY(DataTypes.STRING),
-        allowNull: false,
+        allowNull: true,
         defaultValue: []
     },
     ativo: {
@@ -27,4 +32,4 @@ export const Produtos = sequelize.define("produtos", {
     }
 });
 
-export default Produtos;
+export default Produtos;    
