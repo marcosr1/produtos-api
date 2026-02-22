@@ -72,6 +72,11 @@ npm run dev
 
 ## 🔗 Endpoints
 
+## Menu
+```bash
+GET /menu
+```
+
 ### Criar produto
 ```bash
 POST /products/
