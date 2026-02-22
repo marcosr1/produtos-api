@@ -72,7 +72,7 @@ npm run dev
 
 ## 🔗 Endpoints
 
-## Menu
+### Menu
 ```bash
 GET /menu
 ```
