@@ -81,6 +81,18 @@ GET /menu
 ```bash
 POST /products/
 ```
+
+envia:
+```json
+{
+    "nome": "string",
+    "preco": float,
+    "tipo": "TIPO",
+    "ativo": boolean
+}
+```
+
+resposta:
 ```json
 {
     "id": "uuid",
@@ -88,7 +100,7 @@ POST /products/
     "nome": "string",
     "preco": float,
     "tipo": "TIPO",
-    "ativo": true,
+    "ativo": boolean,
     "updatedAt": "",
     "createdAt": ""
 }
