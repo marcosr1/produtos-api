@@ -81,6 +81,18 @@ GET /menu
 ```bash
 POST /products/
 ```
+```json
+{
+    "id": "uuid",
+    "imagem": [],
+    "nome": "string",
+    "preco": float,
+    "tipo": "TIPO",
+    "ativo": true,
+    "updatedAt": "",
+    "createdAt": ""
+}
+```
 ### preview pedido
 ```bash
 POST /produtos/previewPedido
@@ -105,6 +117,17 @@ PATCH /products/:id/active
 ### Criar order
 ```bash
 POST /order/
+```
+
+### fazer login 
+```bash
+POST /login
+```
+```json
+{
+  "user": admin,
+  "password": admin
+}
 ```
 
 ---
