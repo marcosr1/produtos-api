@@ -36,14 +36,20 @@ src/
 ├── config/
 │ ├── database.js
 ├── controllers/
+│ └── authController.js
+│ └── menuController.js
 │ └── productController.js
 │ └── orderController.js
+├── midlewares/
+│ └── authMiddleware.js
 ├── models/
 │ └── Index.js
 │ └── Product.js
 │ └── Order.js
 │ └── OrderItem.js
 └── routes/
+│ └── authRoutes.js
+│ └── menuRoutes.js
 │ └── productRoutes.js
 │ └── orderRoutes.js
 └── service/
@@ -62,6 +68,11 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 DB_HOST=localhost
 DB_PORT=5432
+
+API_USER=admin
+API_PASS=admin
+JWT_SECRET=suachavesecreta
+JWT_EXPIRES=1h
 ```
 
 ## ▶️ Executando o projeto
