@@ -82,7 +82,7 @@ GET /menu
 POST /products/
 ```
 
-envia:
+envio:
 ```json
 {
     "nome": "string",
@@ -95,7 +95,7 @@ envia:
 resposta:
 ```json
 {
-    "id": "uuid",
+    "id": "id",
     "imagem": [],
     "nome": "string",
     "preco": float,
@@ -105,14 +105,51 @@ resposta:
     "createdAt": ""
 }
 ```
+
 ### preview pedido
 ```bash
 POST /produtos/previewPedido
 ```
+
+envio:
+```json
+{
+    "produtoId": "id",
+    "quantidade": 2
+}
+```
+
+resposta:
+```json
+{
+    "produtoId": "id",
+    "nome": "string",
+    "precoUnitario": float,
+    "quantidade": integer,
+    "total": float
+}
+```
+
 ### Listar Produtos
 ```bash
 GET /products/
 ```
+resposta:
+```json
+[
+    {
+        "id": "id",
+        "nome": "string",
+        "preco": float,
+        "tipo": "TIPO",
+        "imagem": [],
+        "ativo": boolean,
+        "createdAt": "data",
+        "updatedAt": "data"
+    }
+]
+```
+
 ### Atualizar nome
 ```bash
 PATCH /products/:id/name
@@ -139,6 +176,12 @@ POST /login
 {
   "user": admin,
   "password": admin
+}
+```
+resposta:
+```json
+{
+    token: "token"
 }
 ```
 
