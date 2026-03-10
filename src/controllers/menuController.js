@@ -8,15 +8,19 @@ export const getMenu = async (req, res) => {
 
         const produtos = await Produtos.findAll({
             where: { ativo: true },
-            attributes: ["nome", "preco", "imagem"],
+            attributes: ["nome", "preco", "imagem", "tipo"],
             order: [["nome", "ASC"]]
         });
 
-        const menu = {
-            copos: await Produtos.findAll({where: { ativo: true, tipo: "COPO" }, attributes: ["nome", "preco", "imagem"]}),
-            frutas: await Produtos.findAll({ where: { ativo: true, tipo: "FRUTA" }, attributes: ["nome"]}),
-            coberturas: await Produtos.findAll({ where: { ativo: true, tipo: "COBERTURA" }, attributes: ["nome"]})
-        }
+        const menu = {};
+
+        produtos.forEach( produto => {
+            const tipo = produto.tipo.toLowerCase();
+
+            if (!menu[tipo]) menu[tipo] = [];
+
+            menu[tipo].push(produto);
+        });
         
         setMenuCache({ menu });
 

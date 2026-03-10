@@ -7,6 +7,10 @@ const OrderItem = sequelize.define("orderItem", {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
     },
+    orderId: {
+        type: DataTypes.UUID,
+        allowNull: false
+    },
     nomeProduto: {
         type: DataTypes.STRING,
         allowNull: false
