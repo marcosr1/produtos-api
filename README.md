@@ -41,9 +41,7 @@ src/
 │ └── authController.js
 │ └── menuController.js
 │ └── productController.js
-│ └── orderController.js
-├── middlewares/
-│ └── authMiddleware.js
+│ └── orderController.js 
 ├── models/
 │ └── Index.js
 │ └── Product.js
@@ -70,6 +68,11 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 DB_HOST=localhost
 DB_PORT=5432
+
+API_USER=admin
+API_PASS=admin
+JWT_SECRET=suachavesecreta
+JWT_EXPIRES=1h
 ```
 
 ## ▶️ Executando o projeto
@@ -89,14 +92,75 @@ GET /menu
 ```bash
 POST /produtos/
 ```
+
+envio:
+```json
+{
+    "nome": "string",
+    "preco": float,
+    "tipo": "TIPO",
+    "ativo": boolean
+}
+```
+
+resposta:
+```json
+{
+    "id": "id",
+    "imagem": [],
+    "nome": "string",
+    "preco": float,
+    "tipo": "TIPO",
+    "ativo": boolean,
+    "updatedAt": "",
+    "createdAt": ""
+}
+```
+
 ### preview pedido
 ```bash
 POST /produtos/previewPedido
 ```
+
+envio:
+```json
+{
+    "produtoId": "id",
+    "quantidade": 2
+}
+```
+
+resposta:
+```json
+{
+    "produtoId": "id",
+    "nome": "string",
+    "precoUnitario": float,
+    "quantidade": integer,
+    "total": float
+}
+```
+
 ### Listar Produtos
 ```bash
 GET /produtos/
 ```
+resposta:
+```json
+[
+    {
+        "id": "id",
+        "nome": "string",
+        "preco": float,
+        "tipo": "TIPO",
+        "imagem": [],
+        "ativo": boolean,
+        "createdAt": "data",
+        "updatedAt": "data"
+    }
+]
+```
+
 ### Atualizar nome
 ```bash
 PATCH /produtos/:id/name
@@ -122,11 +186,6 @@ PATCH /produtos/:id/imagem
 ### Criar order
 ```bash
 POST /order/
-```
-
-### Login Admin
-```bash
-POST /login
 ```
 
 ---
