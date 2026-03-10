@@ -7,9 +7,20 @@ const Order = sequelize.define("orders", {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
     },
-    status: {
+    nomeCliente: {
         type: DataTypes.STRING,
-        defaultValue: "PEDING"
+        allowNull: false
+    },
+    numeroCliente: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    observacao: {
+        type: DataTypes.STRING
+    },
+    status: {
+        type: DataTypes.ENUM( "PENDING", "PREPARING", "READY", "DELIVERED", "CANCELLED" ),
+        defaultValue: "PENDING"
     },
     total: {
         type: DataTypes.FLOAT,

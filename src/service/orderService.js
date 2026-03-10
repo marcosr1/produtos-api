@@ -1,14 +1,17 @@
 import { Order, OrderItem, Produtos } from "../models/index.js";
 
 class OrderService {
-    static async createOrder({ items, paymentMethod }) {
+    static async createOrder({ items, paymentMethod, nomeCliente, numeroCliente, observacao }) {
         if (!items || items.length === 0) throw new Error("Pedido precisa ter ao menos um produto");
 
         let total = 0;
 
         const order = await Order.create({
             paymentMethod,
-            total: 0
+            total: 0,
+            nomeCliente,
+            numeroCliente, 
+            observacao
         });
 
         for (const item of items) {
@@ -36,6 +39,27 @@ class OrderService {
 
         return order;
     }
+
+    static async putStatus({ id, status}) {
+        const validStatus = [
+            "PENDING",
+            "PREPARING",
+            "READY",
+            "DELIVERED",
+            "CANCELLED"
+        ];
+
+        if (!validStatus.includes(status)) throw new Error("Status inválido");
+
+        const order = new Order.findByPk(id);
+
+        if (!order) throw new Error("Pedido não encontrado");
+
+        await order.update({ status });
+
+        return order;
+    }
+
 }
 
 export default OrderService;
