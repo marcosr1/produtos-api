@@ -33,17 +33,25 @@ Projeto desenvolvido em **Node.js**, usando **PostgreSQL**, **Sequelize**.
 src/
 ├── app.js
 ├── server.js
+├── cache/
+│ ├── menuCache.js
 ├── config/
 │ ├── database.js
 ├── controllers/
+│ └── authController.js
+│ └── menuController.js
 │ └── productController.js
 │ └── orderController.js
+├── middlewares/
+│ └── authMiddleware.js
 ├── models/
 │ └── Index.js
 │ └── Product.js
 │ └── Order.js
 │ └── OrderItem.js
 └── routes/
+│ └── authRoutes.js
+│ └── menuRoutes.js
 │ └── productRoutes.js
 │ └── orderRoutes.js
 └── service/
@@ -79,7 +87,7 @@ GET /menu
 
 ### Criar produto
 ```bash
-POST /products/
+POST /produtos/
 ```
 ### preview pedido
 ```bash
@@ -87,24 +95,38 @@ POST /produtos/previewPedido
 ```
 ### Listar Produtos
 ```bash
-GET /products/
+GET /produtos/
 ```
 ### Atualizar nome
 ```bash
-PATCH /products/:id/name
+PATCH /produtos/:id/name
 ```
 ### Atualizar preço
 ```bash
-PATCH /products/:id/price
+PATCH /produtos/:id/price
 ```
 ### Atualizar ativo
 ```bash
-PATCH /products/:id/active
+PATCH /produtos/:id/active
 ```
+### Atualizar tipo
+```bash
+PATCH /produtos/:id/tipo
+```
+### Atualizar imagem
+```bash
+PATCH /produtos/:id/imagem
+```
+
 
 ### Criar order
 ```bash
 POST /order/
+```
+
+### Login Admin
+```bash
+POST /login
 ```
 
 ---
