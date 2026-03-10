@@ -1,7 +1,12 @@
 import { Produtos } from "../models/index.js";
 import produtosService from "../service/productService.js";
+import { validateProduto } from "../validations/productValidator.js";
 
 export const createProduct = async (req, res) => {
+    const err = validateProduto(req.body);
+
+    if (err) return res.status(400).json({ err });
+
     try {
         const produto = await Produtos.create(req.body);
         res.status(201).json(produto)
