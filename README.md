@@ -97,9 +97,9 @@ envio:
 ```json
 {
     "nome": "string",
-    "preco": float,
+    "preco": "float",
     "tipo": "TIPO",
-    "ativo": boolean
+    "ativo": "boolean"
 }
 ```
 
@@ -109,9 +109,9 @@ resposta:
     "id": "id",
     "imagem": [],
     "nome": "string",
-    "preco": float,
+    "preco": "float",
     "tipo": "TIPO",
-    "ativo": boolean,
+    "ativo": "boolean",
     "updatedAt": "",
     "createdAt": ""
 }
@@ -135,9 +135,9 @@ resposta:
 {
     "produtoId": "id",
     "nome": "string",
-    "precoUnitario": float,
-    "quantidade": integer,
-    "total": float
+    "precoUnitario": "float",
+    "quantidade": "integer",
+    "total": "float"
 }
 ```
 
@@ -151,10 +151,10 @@ resposta:
     {
         "id": "id",
         "nome": "string",
-        "preco": float,
+        "preco": "float",
         "tipo": "TIPO",
         "imagem": [],
-        "ativo": boolean,
+        "ativo": "boolean",
         "createdAt": "data",
         "updatedAt": "data"
     }
