@@ -189,3 +189,24 @@ POST /order/
 ```
 
 ---
+
+### Listar todos os pedidos
+```bash
+GET /order/get
+```
+
+---
+
+### Listar a ordem por id
+```bash
+GET /order/:id
+```
+
+---
+
+### Mudar o status de um pedido
+```bash
+PATCH /order/status/:id
+```
+
+---
