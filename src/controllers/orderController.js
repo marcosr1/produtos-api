@@ -1,6 +1,5 @@
-import Order from "../models/Order.js";
-import OrderService from "../service/orderService.js";
-import { validateOrder } from "../validations/orderValidator.js";
+import {Order, OrderItem} from "../models/index.js";
+import OrderService from "../service/orderService.js"; 
 
 export const createOrder = async (req, res) => {
     try {
@@ -23,7 +22,12 @@ export const getOrder = async (req, res) => {
 export const getOrderID = async(req, res) => {
     try {
         const { id } = req.params;
-        const orderId = Order.findByPk(id);
+        const orderId = await Order.findByPk(id, {
+            include: {
+                model: OrderItem,
+                as: "items"
+            }
+        });
         res.json(orderId);
     } catch (error) {
         res.status(400).json({ error: error.message })

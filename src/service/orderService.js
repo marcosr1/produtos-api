@@ -1,8 +1,15 @@
 import { Order, OrderItem, Produtos } from "../models/index.js";
+import { validateOrder } from "../validations/orderValidator.js"
 
 class OrderService {
     static async createOrder({ items, paymentMethod, nomeCliente, numeroCliente, observacao }) {
         if (!items || items.length === 0) throw new Error("Pedido precisa ter ao menos um produto");
+
+        const error = validateOrder({ items });
+
+        if (error) {
+            throw new Error(error);
+        }
 
         let total = 0;
 
