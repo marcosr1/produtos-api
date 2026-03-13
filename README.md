@@ -38,6 +38,7 @@ src/
 ├── config/
 │ ├── database.js
 ├── controllers/
+│ └── dashboardController.js
 │ └── authController.js
 │ └── menuController.js
 │ └── productController.js
@@ -48,6 +49,7 @@ src/
 │ └── Order.js
 │ └── OrderItem.js
 └── routes/
+│ └── dashboardRoutes.js
 │ └── authRoutes.js
 │ └── menuRoutes.js
 │ └── productRoutes.js
@@ -207,6 +209,14 @@ GET /order/:id
 ### Mudar o status de um pedido
 ```bash
 PATCH /order/status/:id
+```
+
+---
+
+
+### Dashboard de Pedidos
+```bash
+GET /dashboard
 ```
 
 ---
