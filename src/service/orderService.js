@@ -48,6 +48,10 @@ class OrderService {
     }
 
     static async putStatus({ id, status}) {
+        if (!status) {
+            throw new Error("Status é obrigatório");
+        }
+
         const validStatus = [
             "PENDING",
             "PREPARING",
@@ -56,9 +60,10 @@ class OrderService {
             "CANCELLED"
         ];
 
+        status = status.toUpperCase();
         if (!validStatus.includes(status)) throw new Error("Status inválido");
 
-        const order = new Order.findByPk(id);
+        const order = await Order.findByPk(id);
 
         if (!order) throw new Error("Pedido não encontrado");
 

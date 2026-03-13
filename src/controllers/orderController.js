@@ -39,7 +39,7 @@ export const updateStatus = async (req, res) => {
         const { id } = req.params;
         const { status } = req.body;
 
-        const order = await OrderService.putStatus(id, status);
+        const order = await OrderService.putStatus({id, status});
 
         res.json({message: "Status atualizado", order});
     } catch (error) {
