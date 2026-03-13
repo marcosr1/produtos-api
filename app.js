@@ -2,6 +2,7 @@ import express from "express";
 import productRoutes from "./src/routes/productRoutes.js";
 import orderRoutes from "./src/routes/orderRoutes.js";
 import menuRoutes from "./src/routes/menuRoutes.js";
+import dashboardRoutes from "./src/routes/dashboardRoutes.js";
 import authRoutes from "./src/routes/authRoutes.js";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware.js";
 import cors from 'cors';
@@ -15,5 +16,6 @@ app.use(authRoutes);
 app.use("/produtos", productRoutes);
 app.use("/order", orderRoutes);
 app.use(menuRoutes);
+app.use(dashboardRoutes);
 
 export default app;
