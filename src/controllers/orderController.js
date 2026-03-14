@@ -42,6 +42,8 @@ export const updateStatus = async (req, res) => {
         const { status } = req.body;
 
         const order = await OrderService.putStatus({id, status});
+        const io = req.app.get("io");
+        io.emit("novoStatus", order);
 
         res.json({message: "Status atualizado", order});
     } catch (error) {
