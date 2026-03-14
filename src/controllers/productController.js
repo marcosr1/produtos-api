@@ -8,9 +8,7 @@ export const createProduct = async (req, res) => {
     if (err) return res.status(400).json({ err });
 
     try {
-        const produto = await Produtos.create(req.body);
-        const io = req.app.get("io");
-        io.emit("novoPedido", order);
+        const produto = await Produtos.create(req.body); 
         res.status(201).json(produto)
     } catch (error) {
         res.status(400).json( { erro: error.message } );
